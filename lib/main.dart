@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'constants.dart';
 import 'screens/main/main_screen.dart';
@@ -19,6 +20,15 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => CouponsProvider()),
       ],
       child: MaterialApp(
+        localizationsDelegates: [
+          GlobalCupertinoLocalizations.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+        ],
+        supportedLocales: [
+          // Locale("en", "US"),
+          Locale("ar", ""), // Control panel only in Arabic
+        ],
         debugShowCheckedModeBanner: false,
         title: 'Wafar-Cash Admin Panel',
         theme: ThemeData.dark().copyWith(
