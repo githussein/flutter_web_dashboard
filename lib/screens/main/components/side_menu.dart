@@ -8,35 +8,33 @@ class SideMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Drawer(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              DrawerHeader(
-                  child: Image.asset("assets/images/logo.png", width: 80)),
-              DrawerListTile(
-                title: "الرئيسية",
-                svgSrc: "assets/icons/menu_dashboard.svg",
-                press: () {},
-              ),
-              DrawerListTile(
-                title: "تعديل الكوبونات",
-                svgSrc: "assets/icons/menu_setting.svg",
-                press: () {},
-              ),
-              DrawerListTile(
-                title: "تعديل العروض",
-                svgSrc: "assets/icons/menu_store.svg",
-                press: () {},
-              ),
-              DrawerListTile(
-                title: "طلبات الكوبونات",
-                svgSrc: "assets/icons/menu_doc.svg",
-                press: () {},
-              ),
-            ],
-          ),
+    return Drawer(
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            DrawerHeader(
+                child: Image.asset("assets/images/logo.png", width: 80)),
+            DrawerListTile(
+              title: "الرئيسية",
+              svgSrc: "assets/icons/menu_dashboard.svg",
+              press: () {},
+            ),
+            DrawerListTile(
+              title: "تعديل الكوبونات",
+              svgSrc: "assets/icons/menu_setting.svg",
+              press: () {},
+            ),
+            DrawerListTile(
+              title: "تعديل العروض",
+              svgSrc: "assets/icons/menu_store.svg",
+              press: () {},
+            ),
+            DrawerListTile(
+              title: "طلبات الكوبونات",
+              svgSrc: "assets/icons/menu_doc.svg",
+              press: () {},
+            ),
+          ],
         ),
       ),
     );
