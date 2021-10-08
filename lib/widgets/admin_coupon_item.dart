@@ -8,15 +8,16 @@ import '../providers/coupons_provider.dart';
 class AdminCouponItem extends StatelessWidget {
   final String id;
   final String title;
+  final String store;
   final String imageUrl;
 
-  AdminCouponItem(this.id, this.title, this.imageUrl);
+  AdminCouponItem(this.id, this.title, this.store, this.imageUrl);
 
   @override
   Widget build(BuildContext context) {
     final scaffoldMessenger = ScaffoldMessenger.of(context);
     return ListTile(
-      title: Text(title),
+      title: Text(store + " - " + title),
       leading: CircleAvatar(
         backgroundImage: NetworkImage(imageUrl),
       ),
@@ -36,21 +37,21 @@ class AdminCouponItem extends StatelessWidget {
               showDialog(
                   context: context,
                   builder: (ctx) => AlertDialog(
-                        title: Text('Remove Coupon'),
-                        content: Text(
-                            'Are you sure you want to delete this coupon?'),
+                        title: Text('حذف الكوبون'),
+                        content: Text('تأكيد حذف الكوبون؟'),
                         actions: [
                           MaterialButton(
                               child: Text(
-                                'No',
-                                style: TextStyle(
-                                    color: Theme.of(context).primaryColor),
+                                'إلغاء',
                               ),
                               onPressed: () {
                                 Navigator.of(ctx).pop();
                               }),
                           MaterialButton(
-                              child: Text('Yes'),
+                              child: Text(
+                                'حذق',
+                                style: TextStyle(color: Colors.red),
+                              ),
                               onPressed: () async {
                                 try {
                                   await Provider.of<CouponsProvider>(context,

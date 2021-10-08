@@ -8,50 +8,50 @@ import '../models/http_exception.dart';
 class CouponsProvider with ChangeNotifier {
   //A list of pre-loaded coupons
   List<Coupon> _couponsItems = [
-    Coupon(
-      id: "c1",
-      title: "Namshi",
-      code: "AH5",
-      description: "15% discount on all products",
-      imageUrl:
-          "https://uae.governmentjobs.guru/wp-content/uploads/2020/12/Namashi-Jobs.png",
-      link: "https://ar-sa.www.namshi.com/",
-    ),
-    Coupon(
-      id: "c2",
-      title: "Noon",
-      code: "AH5",
-      description: "10% discount on all products",
-      imageUrl:
-          "https://mir-s3-cdn-cf.behance.net/projects/404/2c23bd95299963.Y3JvcCw4NDgsNjY0LDE4MCww.jpg",
-      link: "https://www.noon.com/saudi-en/",
-    ),
-    Coupon(
-      id: "c3",
-      title: "Bath and Body",
-      code: "AH5",
-      description: "10% discount on selected products",
-      imageUrl:
-          "https://bestgiftcardmarket.com/wp-content/uploads/2020/06/BATHANDBODYWORKS.jpeg",
-      link: "https://www.bathandbodyworks.com.sa/ar/",
-    ),
-    Coupon(
-      id: "c4",
-      title: "Max",
-      code: "AH5",
-      description: "10% discount on all products",
-      imageUrl:
-          "https://www.centralparkjakarta.com/wp-content/uploads/2018/08/MAX-Fashions-3.png",
-      link: "https://www.maxfashion.com/sa/en/",
-    ),
-    Coupon(
-      id: "c5",
-      title: "Carrefour",
-      code: "AH5",
-      description: "10% discount on all products",
-      imageUrl: "https://www.brandslex.de/img/logos/xl/c/logo-carrefour-03.png",
-      link: "https://www.carrefourksa.com/",
-    ),
+    // Coupon(
+    //   id: "c1",
+    //   title: "Namshi",
+    //   code: "AH5",
+    //   description: "15% discount on all products",
+    //   imageUrl:
+    //       "https://uae.governmentjobs.guru/wp-content/uploads/2020/12/Namashi-Jobs.png",
+    //   link: "https://ar-sa.www.namshi.com/",
+    // ),
+    // Coupon(
+    //   id: "c2",
+    //   title: "Noon",
+    //   code: "AH5",
+    //   description: "10% discount on all products",
+    //   imageUrl:
+    //       "https://mir-s3-cdn-cf.behance.net/projects/404/2c23bd95299963.Y3JvcCw4NDgsNjY0LDE4MCww.jpg",
+    //   link: "https://www.noon.com/saudi-en/",
+    // ),
+    // Coupon(
+    //   id: "c3",
+    //   title: "Bath and Body",
+    //   code: "AH5",
+    //   description: "10% discount on selected products",
+    //   imageUrl:
+    //       "https://bestgiftcardmarket.com/wp-content/uploads/2020/06/BATHANDBODYWORKS.jpeg",
+    //   link: "https://www.bathandbodyworks.com.sa/ar/",
+    // ),
+    // Coupon(
+    //   id: "c4",
+    //   title: "Max",
+    //   code: "AH5",
+    //   description: "10% discount on all products",
+    //   imageUrl:
+    //       "https://www.centralparkjakarta.com/wp-content/uploads/2018/08/MAX-Fashions-3.png",
+    //   link: "https://www.maxfashion.com/sa/en/",
+    // ),
+    // Coupon(
+    //   id: "c5",
+    //   title: "Carrefour",
+    //   code: "AH5",
+    //   description: "10% discount on all products",
+    //   imageUrl: "https://www.brandslex.de/img/logos/xl/c/logo-carrefour-03.png",
+    //   link: "https://www.carrefourksa.com/",
+    // ),
   ]; //private
 
   // var _showFavoritesOnly = false;

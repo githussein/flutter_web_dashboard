@@ -30,6 +30,7 @@ class ManageCouponsScreen extends StatelessWidget {
               AdminCouponItem(
                 couponsData.items[i].id,
                 couponsData.items[i].title,
+                couponsData.items[i].store,
                 couponsData.items[i].imageUrl,
               ),
               Divider(),

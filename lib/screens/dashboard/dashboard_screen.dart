@@ -13,10 +13,21 @@ class DashboardScreen extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Text(
-                    "لوحة التحكم",
-                    style: Theme.of(context).textTheme.headline6,
-                    textAlign: TextAlign.right,
+                  Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: defaultPadding * 2,
+                      vertical: defaultPadding / 2,
+                    ),
+                    decoration: BoxDecoration(
+                      color: secondaryColor,
+                      borderRadius: const BorderRadius.all(Radius.circular(10)),
+                      // border: Border.all(color: Colors.white10),
+                    ),
+                    child: Text(
+                      "لوحة التحكم",
+                      style: Theme.of(context).textTheme.headline6,
+                      textAlign: TextAlign.right,
+                    ),
                   ),
                 ],
               ),
