@@ -1,11 +1,16 @@
+import 'package:admin_panel_coupons/providers/edit_widget_state.dart';
 import 'package:admin_panel_coupons/screens/manage_coupons_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../constants.dart';
 
 class DashboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    //Listen to changes in edits area widget
+    final providedWidget = Provider.of<EditWidgetState>(context);
+
     return SafeArea(
       child: SingleChildScrollView(
           padding: EdgeInsets.all(defaultPadding),
@@ -36,7 +41,7 @@ class DashboardScreen extends StatelessWidget {
                 children: [
                   Expanded(
                     flex: 5,
-                    child: ManageCouponsScreen(),
+                    child: providedWidget.switchedWidget,
                   ),
                   SizedBox(width: defaultPadding),
                   Expanded(

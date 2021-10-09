@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
+import '../../../providers/edit_widget_state.dart';
 
 class SideMenu extends StatelessWidget {
   const SideMenu({
@@ -22,12 +24,18 @@ class SideMenu extends StatelessWidget {
             DrawerListTile(
               title: "تعديل الكوبونات",
               svgSrc: "assets/icons/menu_setting.svg",
-              press: () {},
+              press: () {
+                Provider.of<EditWidgetState>(context, listen: false)
+                    .changeWidgetMode("coupons");
+              },
             ),
             DrawerListTile(
               title: "تعديل العروض",
               svgSrc: "assets/icons/menu_store.svg",
-              press: () {},
+              press: () {
+                Provider.of<EditWidgetState>(context, listen: false)
+                    .changeWidgetMode("offers");
+              },
             ),
             DrawerListTile(
               title: "طلبات الكوبونات",

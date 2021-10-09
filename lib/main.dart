@@ -1,3 +1,4 @@
+import 'package:admin_panel_coupons/providers/edit_widget_state.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -11,13 +12,17 @@ void main() {
   runApp(MyApp());
 }
 
+enum WidgetMode { COUPONS, OFFERS, REQUESTS }
+
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    print(WidgetMode);
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => CouponsProvider()),
+        ChangeNotifierProvider(create: (context) => EditWidgetState()),
       ],
       child: MaterialApp(
         localizationsDelegates: [

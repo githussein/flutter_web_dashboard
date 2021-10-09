@@ -19,8 +19,8 @@ class AdminCouponItem extends StatelessWidget {
     return ListTile(
       title: Text(store + " - " + title),
       leading: CircleAvatar(
-        backgroundImage: NetworkImage(imageUrl),
-      ),
+          // backgroundImage: NetworkImage(imageUrl),
+          ),
       trailing: Container(
         width: 150,
         child: Row(children: [
@@ -60,7 +60,7 @@ class AdminCouponItem extends StatelessWidget {
                                 } catch (error) {
                                   scaffoldMessenger.showSnackBar(SnackBar(
                                       content: Text(
-                                    'Failed to delete coupon!',
+                                    'فشل حذف الكوبون. برجاء التحقق من الانترنت.',
                                     textAlign: TextAlign.center,
                                   )));
                                 }
