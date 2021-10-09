@@ -1,4 +1,5 @@
 import 'package:admin_panel_coupons/providers/edit_widget_state.dart';
+import 'package:admin_panel_coupons/providers/offers_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => CouponsProvider()),
+        ChangeNotifierProvider(create: (context) => OffersProvider()),
         ChangeNotifierProvider(create: (context) => EditWidgetState()),
       ],
       child: MaterialApp(

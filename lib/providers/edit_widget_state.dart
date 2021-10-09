@@ -1,11 +1,11 @@
 import 'package:admin_panel_coupons/screens/main/components/side_menu.dart';
 import 'package:admin_panel_coupons/screens/manage_coupons_screen.dart';
+import 'package:admin_panel_coupons/screens/manage_offers_screen.dart';
 import 'package:flutter/material.dart';
 
 // enum WidgetMode { COUPONS, OFFERS, REQUESTS }
 
 class EditWidgetState with ChangeNotifier {
-  String _widgetMode = "coupons";
   StatelessWidget switchedWidget = Container();
 
   void changeWidgetMode(String mode) {
@@ -16,7 +16,7 @@ class EditWidgetState with ChangeNotifier {
         break;
       case "offers":
         print("SWITCH TO OFFERS");
-        switchedWidget = Container(height: 400, color: Colors.green);
+        switchedWidget = ManageOffersScreen();
         break;
       default:
         break;
