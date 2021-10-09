@@ -1,6 +1,6 @@
-import 'package:admin_panel_coupons/screens/main/components/side_menu.dart';
 import 'package:admin_panel_coupons/screens/manage_coupons_screen.dart';
 import 'package:admin_panel_coupons/screens/manage_offers_screen.dart';
+import 'package:admin_panel_coupons/screens/manage_requests_screen.dart';
 import 'package:flutter/material.dart';
 
 // enum WidgetMode { COUPONS, OFFERS, REQUESTS }
@@ -18,6 +18,11 @@ class EditWidgetState with ChangeNotifier {
         print("SWITCH TO OFFERS");
         switchedWidget = ManageOffersScreen();
         break;
+      case "requests":
+        print("SWITCH TO REQUESTS");
+        switchedWidget = ManageRequestsScreen();
+        break;
+
       default:
         break;
     }

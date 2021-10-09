@@ -19,8 +19,8 @@ class AdminCouponItem extends StatelessWidget {
     return ListTile(
       title: Text(store + " - " + title),
       leading: CircleAvatar(
-          // backgroundImage: NetworkImage(imageUrl),
-          ),
+        backgroundImage: NetworkImage(imageUrl),
+      ),
       trailing: Container(
         width: 150,
         child: Row(children: [

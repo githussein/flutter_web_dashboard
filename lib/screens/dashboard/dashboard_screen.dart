@@ -1,5 +1,4 @@
 import 'package:admin_panel_coupons/providers/edit_widget_state.dart';
-import 'package:admin_panel_coupons/screens/manage_coupons_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

@@ -1,5 +1,6 @@
 import 'package:admin_panel_coupons/providers/coupons_provider.dart';
 import 'package:admin_panel_coupons/providers/offers_provider.dart';
+import 'package:admin_panel_coupons/providers/requests_provider.dart';
 import 'package:admin_panel_coupons/screens/dashboard/dashboard_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -27,6 +28,8 @@ class _MainScreenState extends State<MainScreen> {
           .fetchCoupons()
           .then((value) {
         Provider.of<OffersProvider>(context, listen: false).fetchOffers();
+      }).then((value) {
+        Provider.of<RequestsProvider>(context, listen: false).fetchRequests();
       }).then((_) {
         setState(() {
           _isLoading = false;

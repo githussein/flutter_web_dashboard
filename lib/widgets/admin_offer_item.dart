@@ -17,8 +17,8 @@ class AdminOfferItem extends StatelessWidget {
     return ListTile(
       title: Text(title),
       leading: CircleAvatar(
-          // backgroundImage: NetworkImage(imageUrl),
-          ),
+        backgroundImage: NetworkImage(imageUrl),
+      ),
       trailing: Container(
         width: 100,
         child: Row(children: [
@@ -34,9 +34,8 @@ class AdminOfferItem extends StatelessWidget {
               showDialog(
                   context: context,
                   builder: (ctx) => AlertDialog(
-                        title: Text('Remove Offer'),
-                        content:
-                            Text('Are you sure you want to delete this offer?'),
+                        title: Text('حذف العرض'),
+                        content: Text('تأكيد حذف العرض؟'),
                         actions: [
                           MaterialButton(
                               child: Text(

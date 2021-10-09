@@ -40,7 +40,10 @@ class SideMenu extends StatelessWidget {
             DrawerListTile(
               title: "طلبات الكوبونات",
               svgSrc: "assets/icons/menu_doc.svg",
-              press: () {},
+              press: () {
+                Provider.of<EditWidgetState>(context, listen: false)
+                    .changeWidgetMode("requests");
+              },
             ),
           ],
         ),
