@@ -1,3 +1,4 @@
+import 'package:admin_panel_coupons/providers/categories_provider.dart';
 import 'package:admin_panel_coupons/providers/coupons_provider.dart';
 import 'package:admin_panel_coupons/providers/offers_provider.dart';
 import 'package:admin_panel_coupons/providers/requests_provider.dart';
@@ -28,6 +29,9 @@ class _MainScreenState extends State<MainScreen> {
           .fetchCoupons()
           .then((value) {
         Provider.of<OffersProvider>(context, listen: false).fetchOffers();
+      }).then((value) {
+        Provider.of<CategoriesProvider>(context, listen: false)
+            .fetchCategories();
       }).then((value) {
         Provider.of<RequestsProvider>(context, listen: false).fetchRequests();
       }).then((_) {

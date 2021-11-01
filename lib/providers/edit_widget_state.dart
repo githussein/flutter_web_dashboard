@@ -1,3 +1,4 @@
+import 'package:admin_panel_coupons/screens/manage_catgories_screen.dart';
 import 'package:admin_panel_coupons/screens/manage_coupons_screen.dart';
 import 'package:admin_panel_coupons/screens/manage_offers_screen.dart';
 import 'package:admin_panel_coupons/screens/manage_requests_screen.dart';
@@ -21,6 +22,10 @@ class EditWidgetState with ChangeNotifier {
       case "requests":
         print("SWITCH TO REQUESTS");
         switchedWidget = ManageRequestsScreen();
+        break;
+      case "categories":
+        print("SWITCH TO CATEGORIES");
+        switchedWidget = ManageCategoriesScreen();
         break;
 
       default:

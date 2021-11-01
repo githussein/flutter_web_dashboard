@@ -1,6 +1,8 @@
+import 'package:admin_panel_coupons/providers/categories_provider.dart';
 import 'package:admin_panel_coupons/providers/edit_widget_state.dart';
 import 'package:admin_panel_coupons/providers/offers_provider.dart';
 import 'package:admin_panel_coupons/providers/requests_provider.dart';
+import 'package:admin_panel_coupons/screens/edit_category_screen.dart';
 import 'package:admin_panel_coupons/screens/edit_coupon_screen.dart';
 import 'package:admin_panel_coupons/screens/edit_offer_screen.dart';
 import 'package:flutter/material.dart';
@@ -28,6 +30,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => CouponsProvider()),
         ChangeNotifierProvider(create: (context) => OffersProvider()),
         ChangeNotifierProvider(create: (context) => RequestsProvider()),
+        ChangeNotifierProvider(create: (context) => CategoriesProvider()),
         ChangeNotifierProvider(create: (context) => EditWidgetState()),
       ],
       child: MaterialApp(
@@ -51,6 +54,7 @@ class MyApp extends StatelessWidget {
         routes: {
           EditCouponScreen.routeName: (ctx) => EditCouponScreen(),
           EditOfferScreen.routeName: (ctx) => EditOfferScreen(),
+          EditCategoryScreen.routeName: (ctx) => EditCategoryScreen(),
         },
         home: MainScreen(),
       ),

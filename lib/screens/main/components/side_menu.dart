@@ -23,7 +23,7 @@ class SideMenu extends StatelessWidget {
             // ),
             DrawerListTile(
               title: "تعديل الكوبونات",
-              svgSrc: "assets/icons/menu_setting.svg",
+              svgSrc: "assets/icons/drop_box.svg",
               press: () {
                 Provider.of<EditWidgetState>(context, listen: false)
                     .changeWidgetMode("coupons");
@@ -31,10 +31,18 @@ class SideMenu extends StatelessWidget {
             ),
             DrawerListTile(
               title: "تعديل العروض",
-              svgSrc: "assets/icons/menu_store.svg",
+              svgSrc: "assets/icons/Documents.svg",
               press: () {
                 Provider.of<EditWidgetState>(context, listen: false)
                     .changeWidgetMode("offers");
+              },
+            ),
+            DrawerListTile(
+              title: "تعديل الأقسام",
+              svgSrc: "assets/icons/google_drive.svg",
+              press: () {
+                Provider.of<EditWidgetState>(context, listen: false)
+                    .changeWidgetMode("categories");
               },
             ),
             DrawerListTile(
