@@ -1,4 +1,5 @@
 import 'package:admin_panel_coupons/constants.dart';
+import 'package:admin_panel_coupons/screens/edit_coupon_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -26,8 +27,8 @@ class AdminCouponItem extends StatelessWidget {
         child: Row(children: [
           IconButton(
             onPressed: () {
-              // Navigator.of(context)
-              // .pushNamed(EditCouponScreen.routeName, arguments: id);
+              Navigator.of(context)
+                  .pushNamed(EditCouponScreen.routeName, arguments: id);
             },
             icon: Icon(Icons.edit),
           ),

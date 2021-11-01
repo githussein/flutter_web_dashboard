@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../constants.dart';
 import '../providers/requests_provider.dart';
 // import '../widgets/app_drawer.dart';
 import '../widgets/admin_request_item.dart';
@@ -38,7 +39,10 @@ class ManageRequestsScreen extends StatelessWidget {
                         requestsData.items[i].store,
                         requestsData.items[i].link,
                       ),
-                      Divider(height: 10),
+                      Container(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: defaultPadding * 3),
+                          child: Divider()),
                     ],
                   ),
                 )

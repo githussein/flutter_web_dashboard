@@ -16,11 +16,11 @@ class SideMenu extends StatelessWidget {
           children: [
             DrawerHeader(
                 child: Image.asset("assets/images/logo.png", width: 80)),
-            DrawerListTile(
-              title: "الرئيسية",
-              svgSrc: "assets/icons/menu_dashboard.svg",
-              press: () {},
-            ),
+            // DrawerListTile(
+            //   title: "الرئيسية",
+            //   svgSrc: "assets/icons/menu_dashboard.svg",
+            //   press: () {},
+            // ),
             DrawerListTile(
               title: "تعديل الكوبونات",
               svgSrc: "assets/icons/menu_setting.svg",

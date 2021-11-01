@@ -1,6 +1,8 @@
 import 'package:admin_panel_coupons/providers/edit_widget_state.dart';
 import 'package:admin_panel_coupons/providers/offers_provider.dart';
 import 'package:admin_panel_coupons/providers/requests_provider.dart';
+import 'package:admin_panel_coupons/screens/edit_coupon_screen.dart';
+import 'package:admin_panel_coupons/screens/edit_offer_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -39,13 +41,17 @@ class MyApp extends StatelessWidget {
           Locale("ar", ""), // Control panel only in Arabic
         ],
         debugShowCheckedModeBanner: false,
-        title: 'Wafar-Cash Admin Panel',
+        title: 'لوحة تحكم التطبيق',
         theme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor: bgColor,
           textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme)
               .apply(bodyColor: Colors.white),
           canvasColor: secondaryColor,
         ),
+        routes: {
+          EditCouponScreen.routeName: (ctx) => EditCouponScreen(),
+          EditOfferScreen.routeName: (ctx) => EditOfferScreen(),
+        },
         home: MainScreen(),
       ),
     );

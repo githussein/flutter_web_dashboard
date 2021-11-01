@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../constants.dart';
 import '../providers/requests_provider.dart';
 
 class AdminRequestItem extends StatelessWidget {
@@ -30,7 +31,7 @@ class AdminRequestItem extends StatelessWidget {
         ],
       ),
       trailing: Container(
-        width: 100,
+        width: 150,
         child: Row(
           children: [
             IconButton(
@@ -39,6 +40,7 @@ class AdminRequestItem extends StatelessWidget {
               },
               icon: Icon(Icons.launch),
             ),
+            SizedBox(width: defaultPadding * 2),
             IconButton(
               onPressed: () {
                 showDialog(

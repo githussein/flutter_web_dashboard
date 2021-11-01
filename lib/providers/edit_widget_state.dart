@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 // enum WidgetMode { COUPONS, OFFERS, REQUESTS }
 
 class EditWidgetState with ChangeNotifier {
-  StatelessWidget switchedWidget = Container();
+  StatelessWidget switchedWidget = ManageCouponsScreen();
 
   void changeWidgetMode(String mode) {
     switch (mode) {

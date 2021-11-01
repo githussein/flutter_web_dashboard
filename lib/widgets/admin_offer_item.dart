@@ -1,7 +1,9 @@
+import 'package:admin_panel_coupons/screens/edit_offer_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 // import '../screens/edit_offer_screen.dart';
+import '../constants.dart';
 import '../providers/offers_provider.dart';
 
 class AdminOfferItem extends StatelessWidget {
@@ -20,15 +22,16 @@ class AdminOfferItem extends StatelessWidget {
         backgroundImage: NetworkImage(imageUrl),
       ),
       trailing: Container(
-        width: 100,
+        width: 150,
         child: Row(children: [
           IconButton(
             onPressed: () {
-              // Navigator.of(context)
-              //     .pushNamed(EditOfferScreen.routeName, arguments: id);
+              Navigator.of(context)
+                  .pushNamed(EditOfferScreen.routeName, arguments: id);
             },
             icon: Icon(Icons.edit),
           ),
+          SizedBox(width: defaultPadding * 2),
           IconButton(
             onPressed: () {
               showDialog(
