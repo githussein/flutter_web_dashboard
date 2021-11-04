@@ -1,4 +1,5 @@
 import 'package:admin_panel_coupons/constants.dart';
+import 'package:admin_panel_coupons/providers/categories_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -154,6 +155,17 @@ class _EditCouponScreenState extends State<EditCouponScreen> {
 
   @override
   Widget build(BuildContext context) {
+    //access the categories
+    //instance of the categories provider
+    final categoriesData = Provider.of<CategoriesProvider>(context).items;
+
+    List<String> categoriesList = [];
+    categoriesData.forEach((element) {
+      categoriesList.insert(0, element.title);
+    });
+
+    String _category = '';
+
     return Scaffold(
       appBar: AppBar(
         title: Text('تعديل الكوبونات'),
@@ -368,17 +380,29 @@ class _EditCouponScreenState extends State<EditCouponScreen> {
                               isFavorite: _editedCoupon.isFavorite);
                         },
                       ),
-                      TextFormField(
-                        initialValue: _initValues['category'],
-                        decoration: InputDecoration(labelText: 'القسم'),
-                        textInputAction: TextInputAction.done,
-                        focusNode: _categoryFocusNode,
+                      DropdownButtonFormField<String>(
+                        value: categoriesList[0] != null
+                            ? categoriesList[0]
+                            : null,
+                        hint: Text('القسم'),
+                        icon: const Icon(Icons.keyboard_arrow_down),
+                        onChanged: (String newValue) {
+                          setState(() {
+                            _category = newValue;
+                          });
+                        },
+                        items: categoriesList
+                            .map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList(),
                         validator: (value) {
-                          if (value.isEmpty) {
-                            return 'هذا الحقل إجباري';
-                          } else {
-                            return null;
+                          if (value == null) {
+                            return 'برجاء اختيار القسم';
                           }
+                          return null;
                         },
                         onSaved: (value) {
                           _editedCoupon = Coupon(
@@ -393,6 +417,31 @@ class _EditCouponScreenState extends State<EditCouponScreen> {
                               isFavorite: _editedCoupon.isFavorite);
                         },
                       ),
+                      // TextFormField(
+                      //   initialValue: _initValues['category'],
+                      //   decoration: InputDecoration(labelText: 'القسم'),
+                      //   textInputAction: TextInputAction.done,
+                      //   focusNode: _categoryFocusNode,
+                      //   validator: (value) {
+                      //     if (value.isEmpty) {
+                      //       return 'هذا الحقل إجباري';
+                      //     } else {
+                      //       return null;
+                      //     }
+                      //   },
+                      //   onSaved: (value) {
+                      //     _editedCoupon = Coupon(
+                      //         id: _editedCoupon.id,
+                      //         store: _editedCoupon.store,
+                      //         title: _editedCoupon.title,
+                      //         code: _editedCoupon.code,
+                      //         description: _editedCoupon.description,
+                      //         imageUrl: _editedCoupon.imageUrl,
+                      //         link: _editedCoupon.link,
+                      //         category: value,
+                      //         isFavorite: _editedCoupon.isFavorite);
+                      //   },
+                      // ),
                       SizedBox(height: 40),
                       MaterialButton(
                         onPressed: () {

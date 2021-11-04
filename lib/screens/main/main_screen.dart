@@ -25,9 +25,7 @@ class _MainScreenState extends State<MainScreen> {
         _isLoading = true;
       });
       //fetch offers and coupons
-      Provider.of<CouponsProvider>(context, listen: false)
-          .fetchCoupons()
-          .then((value) {
+      Provider.of<CouponsProvider>(context).fetchCoupons().then((value) {
         Provider.of<OffersProvider>(context, listen: false).fetchOffers();
       }).then((value) {
         Provider.of<CategoriesProvider>(context, listen: false)
