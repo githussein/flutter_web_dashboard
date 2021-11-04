@@ -1,4 +1,5 @@
 import 'package:admin_panel_coupons/screens/edit_offer_screen.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -20,6 +21,12 @@ class ManageOffersScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     //Listen to changes in the coupons list
     final offersData = Provider.of<OffersProvider>(context);
+
+    final users = Provider.of<QuerySnapshot>(context);
+    // for (var user in users.docs) {
+    //   print(user.data());
+    // }
+    print(users.docs[0].data());
 
     return RefreshIndicator(
       onRefresh: () => _refreshOffers(context),

@@ -3,6 +3,8 @@ import 'package:admin_panel_coupons/providers/coupons_provider.dart';
 import 'package:admin_panel_coupons/providers/offers_provider.dart';
 import 'package:admin_panel_coupons/providers/requests_provider.dart';
 import 'package:admin_panel_coupons/screens/dashboard/dashboard_screen.dart';
+import 'package:admin_panel_coupons/services/database.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -44,18 +46,22 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(child: SideMenu()), //flex 1/5
-            Expanded(
-                flex: 5, // takes5/6 of the screen
-                child: _isLoading
-                    ? Center(child: CircularProgressIndicator())
-                    : DashboardScreen()),
-          ],
+    return StreamProvider<QuerySnapshot>.value(
+      initialData: null,
+      value: DatabaseService().users,
+      child: Scaffold(
+        body: SafeArea(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(child: SideMenu()), //flex 1/5
+              Expanded(
+                  flex: 5, // takes5/6 of the screen
+                  child: _isLoading
+                      ? Center(child: CircularProgressIndicator())
+                      : DashboardScreen()),
+            ],
+          ),
         ),
       ),
     );
